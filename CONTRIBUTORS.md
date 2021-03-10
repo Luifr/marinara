@@ -57,3 +57,5 @@ Marinara is open source software and is built by volunteers from around the worl
 - [Wesley Matos](https://github.com/wricke): Portuguese (Brazil) translation
 - [Rachel Ng](https://github.com/rachelnml): Malay translation
 - [Lui Rocha](https://github.com/LuiFr): Skip break button
+- [Carolina Arenas](https://github.com/arenasoy): Remove timer
+- [Ana Fainelo](http://github.com/anafainelo): Remove timer

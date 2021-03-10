@@ -345,6 +345,12 @@ class Messages
   get long_break() {
     return chrome.i18n.getMessage('long_break', []);
   }
+  get general_settings() {
+    return chrome.i18n.getMessage('general_settings', []);
+  }
+  get show_timer() {
+    return chrome.i18n.getMessage('show_timer', []);
+  }
   get march() {
     return chrome.i18n.getMessage('march', []);
   }

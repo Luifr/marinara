@@ -65,9 +65,10 @@ class SettingsSchema
         notifications: {
           desktop: true,
           tab: true,
-          sound: null
+          sound: null,
         }
       },
+      showTimer: true,
       autostart: {
         time: null,
       },
