@@ -45,13 +45,14 @@ class BadgeObserver
     }[phase];
 
     if (minutes != null) {
+      const timeRemaining = minutes < 1 ? M.less_than_minute : M.n_minutes(minutes)
       if (!this.settings.showTimer) {
         text = ' ';
       }
       else {
-        text = minutes < 1 ? M.less_than_minute : M.n_minutes(minutes);
+        text = timeRemaining;
       }
-      tooltip = M.browser_action_tooltip(title, M.time_remaining(text));
+      tooltip = M.browser_action_tooltip(title, M.time_remaining(timeRemaining));
     } else {
       tooltip = M.browser_action_tooltip(title, tooltip);
     }
@@ -202,6 +203,9 @@ class NotificationObserver
       if (settings.notifications.desktop) {
         this.notification = new Notification(title, messages.join('\n'), () => this.timer.start());
         this.notification.addButton(buttonText, () => this.timer.start());
+        if (nextPhase !== Phase.Focus) {
+          this.notification.addButton(M.start_focusing_now, () => this.timer.startFocus());
+        }
         await this.notification.show();
       }
 
